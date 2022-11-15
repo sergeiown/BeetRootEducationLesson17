@@ -1,4 +1,48 @@
 @import "../style/_reset.scss";
 @import "../style/fonts";
 
-$color-main: #ffcc00 !global;
+$color-main: #ffcc00 !default;
+$padding-main: 121px calc((100vw - 1170px) / 2) !default;
+
+@mixin parent-hovered {
+  @if & {
+    &:hover {
+      background-color: $color-main;
+    }
+  } @else {
+    a {
+      background-color: transparent;
+    }
+  }
+}
+
+body {
+  padding: $padding-main;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h4 {
+    @extend %subtitle;
+  }
+  h1 {
+    @extend %title;
+  }
+  &__underline {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: space-between;
+    margin: 40px;
+    & hr {
+      width: 210px;
+      height: 1px;
+      left: 360px;
+      top: 147px;
+      background-color: $color-main;
+      border: 0;
+    }
+  }
+}
