@@ -21,6 +21,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: white;
 }
 
 // ⇓ ⇓ ⇓ ⇓ ⇓ header ⇓ ⇓ ⇓ ⇓ ⇓
@@ -95,11 +96,36 @@ body {
   & h3 {
     @extend %subtitle-position;
   }
+
+  &__icons ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+
+    li svg {
+      @include parent-hovered;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+  }
+
   & p {
     @extend %text-bio;
     text-align: center;
   }
+  & svg {
+    width: 50px;
+    height: 4px;
+  }
   & button {
     @extend %text-button;
+    @include parent-hovered;
+    width: 118px;
+    height: 24px;
+    border: 1px solid #ffcc00;
+    background-color: transparent;
   }
 }
