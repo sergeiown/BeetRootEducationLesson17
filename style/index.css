@@ -149,24 +149,44 @@ body {
 }
 .main__photo {
   width: 515px;
-  padding: 60px 85px 65px 0;
+  padding: 60px 84px 65px 0;
 }
 .main__info {
   width: 515px;
-  height: 560px;
-  padding: 60px 0 65px 85px;
+  padding: 60px 0 65px 84px;
   border-left: 1px solid #ffcc00;
 }
 
 .photo__border {
-  padding: 15px;
+  padding: 13px;
   border: 1px solid #ffcc00;
+  position: relative;
+  width: 430px;
+  height: 430px;
+}
+.photo__border::before, .photo__border::after {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 430px;
+  height: 230px;
+  background-color: white;
+  left: -1px;
+  top: 99px;
+  z-index: 0;
+}
+.photo__border::after {
+  transform: rotate(90deg);
 }
 .photo__border img {
+  position: absolute;
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 400px;
+  height: 400px;
+  top: 13px;
+  left: 13px;
   border: 1px solid #ffcc00;
+  z-index: 1;
 }
 
 .info {
