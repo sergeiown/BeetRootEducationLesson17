@@ -189,6 +189,8 @@ body {
 }
 .info__icons ul li svg:hover {
   background-color: #ffcc00;
+  transition-duration: 0.5s;
+  cursor: pointer;
 }
 .info p {
   text-align: center;
@@ -205,4 +207,6 @@ body {
 }
 .info button:hover {
   background-color: #ffcc00;
+  transition-duration: 0.5s;
+  cursor: pointer;
 }/*# sourceMappingURL=index.css.map */

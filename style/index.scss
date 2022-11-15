@@ -8,6 +8,8 @@ $padding-main: 121px calc((100vw - 1170px) / 2) !default;
   @if & {
     &:hover {
       background-color: $color-main;
+      transition-duration: 0.5s;
+      cursor: pointer;
     }
   } @else {
     a {
@@ -64,6 +66,7 @@ body {
   width: 1030px;
 }
 
+// ⇓ leftside ⇓
 .photo {
   padding: 65px 85px 65px 0;
   .photo__border {
@@ -78,6 +81,7 @@ body {
   }
 }
 
+// ⇓ rightside ⇓
 .info {
   padding: 65px 0 65px 85px;
   border-left: 1px solid $color-main;
