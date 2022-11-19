@@ -1,0 +1,173 @@
+@import "../style/_reset.scss";
+@import "../style/fonts";
+
+$color-main: #ffcc00 !default;
+$padding-body: 121px calc((100vw - 1170px) / 2) !default;
+
+@mixin parent-hovered {
+  @if & {
+    &:hover {
+      background-color: $color-main;
+      transition-duration: 0.5s;
+      cursor: pointer;
+    }
+  } @else {
+    a {
+      background-color: transparent;
+    }
+  }
+}
+
+body {
+  padding: $padding-body;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+
+// ⇓ ⇓ ⇓ ⇓ ⇓ header ⇓ ⇓ ⇓ ⇓ ⇓
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h4 {
+    @extend %subtitle;
+    margin: 0 0 15px 0;
+  }
+
+  h1 {
+    @extend %title;
+  }
+
+  &__underline {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: space-between;
+    margin: 40px 0;
+    & hr {
+      width: 210px;
+      height: 1px;
+      background-color: $color-main;
+      border: 0;
+    }
+    & svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+// ⇓ ⇓ ⇓ ⇓ ⇓ main ⇓ ⇓ ⇓ ⇓ ⇓
+.main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  &__photo {
+    width: calc(430px + 85px);
+    padding: 60px 84px 65px 0;
+  }
+  &__info {
+    width: calc(430px + 85px);
+    padding: 60px 0 65px 84px;
+    border-left: 1px solid $color-main;
+  }
+}
+
+// ⇓ leftside ⇓
+.photo {
+  &__border {
+    padding: 13px;
+    border: 1px solid $color-main;
+    position: relative;
+    width: 430px;
+    height: 430px;
+
+    &::before,
+    &::after {
+      content: " ";
+      position: absolute;
+      display: block;
+      width: 430px;
+      height: 230px;
+      background-color: white;
+      left: -1px;
+      top: 99px;
+      z-index: 0;
+    }
+    &::after {
+      transform: rotate(90deg);
+    }
+
+    & img {
+      position: absolute;
+      display: block;
+      width: 400px;
+      height: 400px;
+      top: 13px;
+      left: 13px;
+      border: 1px solid $color-main;
+      z-index: 1;
+    }
+  }
+}
+
+// ⇓ rightside ⇓
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    @extend %subtitle-name;
+  }
+
+  & hr {
+    width: 100px;
+    height: 1px;
+    background-color: $color-main;
+    border: 0;
+    margin: 30px 0;
+  }
+
+  & h3 {
+    @extend %subtitle-position;
+  }
+
+  &__icons ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    margin: 30px 0 45px 0;
+    li svg {
+      @include parent-hovered;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+  }
+
+  & p {
+    @extend %text-bio;
+    text-align: center;
+    margin: 0 0 15px 0;
+  }
+
+  & svg {
+    width: 50px;
+    height: 4px;
+  }
+
+  & button {
+    @extend %text-button;
+    @include parent-hovered;
+    width: 118px;
+    height: 24px;
+    border: 1px solid #ffcc00;
+    margin: 20px 0 0 0;
+  }
+}
