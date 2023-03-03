@@ -8,4 +8,4 @@ _LMS Beetroot Academy progress_
 
 - Зверстати макет [Our team](https://www.figma.com/file/JQ5Tv09MikgxVxf0K5WxqQ/our_team)
 
-![screenshot](./img/screenshot.jpg)
+![image](https://user-images.githubusercontent.com/112722061/222780317-681b8e07-c46e-4c37-9d3a-b84929e5698e.png)
